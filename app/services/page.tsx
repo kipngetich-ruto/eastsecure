@@ -168,20 +168,20 @@ const services = [
 
 export default function ServicesPage() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-slate-900">
       <Header />
       <main>
         {/* Hero Section */}
-        <section className="py-20 bg-gradient-to-br from-blue-900/20 via-teal-900/20 to-orange-900/20">
+        <section className="pt-24 pb-12 sm:pt-32 sm:pb-16 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-4xl mx-auto">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
                 Cybersecurity Services for
-                <span className="block bg-gradient-to-r from-blue-400 to-teal-400 bg-clip-text text-transparent">
+                <span className="block bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
                   East Africa
                 </span>
               </h1>
-              <p className="text-xl text-muted-foreground leading-relaxed">
+              <p className="text-lg sm:text-xl text-slate-300 leading-relaxed">
                 Comprehensive security solutions designed specifically for the unique challenges and opportunities 
                 of Kenya, Uganda, Tanzania, Rwanda, and Ethiopia's digital ecosystems.
               </p>
@@ -190,7 +190,7 @@ export default function ServicesPage() {
         </section>
 
         {/* Services Grid */}
-        <section className="py-20">
+        <section className="py-12 sm:py-16 lg:py-20">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="space-y-16">
               {services.map((service, index) => {
@@ -199,13 +199,13 @@ export default function ServicesPage() {
                   <div key={service.id} id={service.id} className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-12 items-center`}>
                     <div className="flex-1 space-y-6">
                       <div className="flex items-center space-x-3">
-                        <div className="p-3 bg-primary/10 rounded-lg">
-                          <IconComponent className="h-8 w-8 text-primary" />
+                        <div className="p-3 bg-cyan-500/10 rounded-lg">
+                          <IconComponent className="h-8 w-8 text-cyan-400" />
                         </div>
-                        <h2 className="text-3xl font-bold">{service.title}</h2>
+                        <h2 className="text-3xl font-bold text-white">{service.title}</h2>
                       </div>
                       
-                      <p className="text-lg text-muted-foreground leading-relaxed">
+                      <p className="text-lg text-slate-300 leading-relaxed">
                         {service.fullDescription}
                       </p>
 
@@ -213,13 +213,13 @@ export default function ServicesPage() {
                         {service.features.map((feature, featureIndex) => (
                           <div key={featureIndex} className="flex items-center space-x-2">
                             <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0" />
-                            <span className="text-sm">{feature}</span>
+                            <span className="text-sm text-slate-300">{feature}</span>
                           </div>
                         ))}
                       </div>
 
                       <Link href="/contact">
-                        <Button className="group">
+                        <Button className="group bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white shadow-lg hover:shadow-cyan-500/25">
                           Get Started
                           <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                         </Button>
@@ -227,23 +227,23 @@ export default function ServicesPage() {
                     </div>
 
                     <div className="flex-1">
-                      <Card className="bg-muted/50 border-primary/20">
+                      <Card className="bg-slate-800/50 border border-slate-700">
                         <CardHeader>
-                          <CardTitle className="flex items-center space-x-2">
-                            <Badge variant="secondary">Case Study</Badge>
+                          <CardTitle className="flex items-center space-x-2 text-white">
+                            <Badge variant="secondary" className="bg-cyan-500/20 text-cyan-400">Case Study</Badge>
                           </CardTitle>
                         </CardHeader>
                         <CardContent className="space-y-4">
                           <div>
-                            <h4 className="font-semibold mb-2">Client: {service.caseStudy.client}</h4>
-                            <p className="text-sm text-muted-foreground">{service.caseStudy.challenge}</p>
+                            <h4 className="font-semibold mb-2 text-white">Client: {service.caseStudy.client}</h4>
+                            <p className="text-sm text-slate-400">{service.caseStudy.challenge}</p>
                           </div>
                           <div>
-                            <h4 className="font-semibold mb-2">Solution:</h4>
-                            <p className="text-sm text-muted-foreground">{service.caseStudy.solution}</p>
+                            <h4 className="font-semibold mb-2 text-white">Solution:</h4>
+                            <p className="text-sm text-slate-400">{service.caseStudy.solution}</p>
                           </div>
                           <div>
-                            <h4 className="font-semibold mb-2">Result:</h4>
+                            <h4 className="font-semibold mb-2 text-white">Result:</h4>
                             <p className="text-sm text-green-600">{service.caseStudy.result}</p>
                           </div>
                         </CardContent>
@@ -257,21 +257,21 @@ export default function ServicesPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-primary/5">
+        <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border-t border-slate-700">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl font-bold mb-4">Ready to Secure Your Organization?</h2>
-            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+            <h2 className="text-3xl font-bold mb-4 text-white">Ready to Secure Your Organization?</h2>
+            <p className="text-lg text-slate-300 mb-8 max-w-2xl mx-auto">
               Get started with a free cybersecurity consultation tailored to your specific needs and regional requirements.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link href="/contact">
-                <Button size="lg">
+                <Button size="lg" className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white shadow-lg hover:shadow-cyan-500/25">
                   Schedule Free Consultation
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
               <Link href="/portal">
-                <Button variant="outline" size="lg">
+                <Button variant="outline" size="lg" className="border-slate-600 text-slate-300 hover:bg-slate-800 hover:text-white">
                   Access Client Portal
                 </Button>
               </Link>

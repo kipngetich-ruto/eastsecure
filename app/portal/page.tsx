@@ -253,15 +253,15 @@ export default function PortalPage() {
 
   return (
     <div className="min-h-screen">
-      <main className="py-8">
+      <main className="py-8 bg-slate-900 min-h-screen">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 space-y-4 md:space-y-0">
             <div>
-              <h1 className="text-3xl font-bold">Welcome back, {mockUser.name}</h1>
-              <p className="text-muted-foreground">Manage your cybersecurity services and view reports</p>
+              <h1 className="text-3xl font-bold text-white">Welcome back, {mockUser.name}</h1>
+              <p className="text-slate-400">Manage your cybersecurity services and view reports</p>
             </div>
-            <Button onClick={handleLogout} variant="outline">
+            <Button onClick={handleLogout} variant="outline" className="border-slate-600 text-slate-300 hover:bg-slate-800 hover:text-white">
               Logout
             </Button>
           </div>

@@ -53,20 +53,20 @@ const partnerships = [
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-slate-900">
       <Header />
       <main>
         {/* Hero Section */}
-        <section className="py-20 bg-gradient-to-br from-blue-900/20 via-teal-900/20 to-orange-900/20">
+        <section className="pt-24 pb-12 sm:pt-32 sm:pb-16 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-4xl mx-auto">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
                 About
-                <span className="block bg-gradient-to-r from-blue-400 to-teal-400 bg-clip-text text-transparent">
+                <span className="block bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
                   EastSecure
                 </span>
               </h1>
-              <p className="text-xl text-muted-foreground leading-relaxed">
+              <p className="text-lg sm:text-xl text-slate-300 leading-relaxed">
                 East Africa&apos;s premier cybersecurity firm, dedicated to protecting the region&apos;s 
                 digital transformation with world-class expertise and local knowledge.
               </p>
@@ -75,18 +75,18 @@ export default function AboutPage() {
         </section>
 
         {/* Mission & Vision */}
-        <section className="py-20">
+        <section className="py-12 sm:py-16 lg:py-20">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              <Card className="border-primary/20 bg-primary/5">
+              <Card className="bg-slate-800/50 border border-slate-700">
                 <CardHeader>
-                  <CardTitle className="flex items-center space-x-2 text-2xl">
-                    <Shield className="h-6 w-6 text-primary" />
+                  <CardTitle className="flex items-center space-x-2 text-2xl text-white">
+                    <Shield className="h-6 w-6 text-cyan-400" />
                     <span>Our Mission</span>
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-lg leading-relaxed">
+                  <p className="text-lg leading-relaxed text-slate-300">
                     To empower East African organizations with cutting-edge cybersecurity solutions 
                     that understand and address the unique challenges of our region&apos;s digital landscape. 
                     We bridge global security expertise with local knowledge to protect what matters most.
@@ -94,15 +94,15 @@ export default function AboutPage() {
                 </CardContent>
               </Card>
 
-              <Card className="border-teal-500/20 bg-teal-500/5">
+              <Card className="bg-slate-800/50 border border-slate-700">
                 <CardHeader>
-                  <CardTitle className="flex items-center space-x-2 text-2xl">
+                  <CardTitle className="flex items-center space-x-2 text-2xl text-white">
                     <Globe className="h-6 w-6 text-teal-500" />
                     <span>Our Vision</span>
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-lg leading-relaxed">
+                  <p className="text-lg leading-relaxed text-slate-300">
                     To be the leading cybersecurity provider in East Africa, enabling secure digital 
                     transformation across Kenya, Uganda, Tanzania, Rwanda, and Ethiopia while fostering 
                     regional cooperation in cybersecurity excellence.
@@ -114,20 +114,20 @@ export default function AboutPage() {
         </section>
 
         {/* Team Section */}
-        <section className="py-20 bg-muted/50">
+        <section className="py-12 sm:py-16 lg:py-20 bg-slate-800/30">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">
+              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4 text-white">
                 Meet Our Expert Team
               </h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-lg text-slate-300 max-w-2xl mx-auto">
                 Cybersecurity professionals with deep regional expertise and international certifications
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {team.map((member, index) => (
-                <Card key={index} className="overflow-hidden">
+                <Card key={index} className="overflow-hidden bg-slate-800/50 border border-slate-700">
                   <CardContent className="p-6">
                     <div className="flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-6">
                       <Image
@@ -138,13 +138,13 @@ export default function AboutPage() {
                         className="w-24 h-24 rounded-full object-cover"
                       />
                       <div className="flex-1 text-center sm:text-left">
-                        <h3 className="text-xl font-bold mb-1">{member.name}</h3>
-                        <p className="text-primary font-medium mb-2">{member.position}</p>
-                        <p className="text-sm text-muted-foreground mb-3">{member.education}</p>
-                        <p className="text-sm text-muted-foreground mb-4">{member.experience}</p>
+                        <h3 className="text-xl font-bold mb-1 text-white">{member.name}</h3>
+                        <p className="text-cyan-400 font-medium mb-2">{member.position}</p>
+                        <p className="text-sm text-slate-400 mb-3">{member.education}</p>
+                        <p className="text-sm text-slate-400 mb-4">{member.experience}</p>
                         <div className="flex flex-wrap gap-2 justify-center sm:justify-start">
                           {member.specialties.map((specialty, specIndex) => (
-                            <Badge key={specIndex} variant="secondary" className="text-xs">
+                            <Badge key={specIndex} variant="secondary" className="text-xs bg-slate-700 text-slate-300">
                               {specialty}
                             </Badge>
                           ))}
@@ -159,23 +159,23 @@ export default function AboutPage() {
         </section>
 
         {/* Partnerships */}
-        <section className="py-20">
+        <section className="py-12 sm:py-16 lg:py-20">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">
+              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4 text-white">
                 Strategic Partnerships
               </h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-lg text-slate-300 max-w-2xl mx-auto">
                 Collaborating with leading organizations to enhance cybersecurity across East Africa
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {partnerships.map((partnership, index) => (
-                <Card key={index} className="text-center">
+                <Card key={index} className="text-center bg-slate-800/50 border border-slate-700">
                   <CardHeader>
-                    <CardTitle className="text-lg">{partnership.name}</CardTitle>
-                    <CardDescription>{partnership.type}</CardDescription>
+                    <CardTitle className="text-lg text-white">{partnership.name}</CardTitle>
+                    <CardDescription className="text-slate-400">{partnership.type}</CardDescription>
                   </CardHeader>
                 </Card>
               ))}
@@ -184,35 +184,35 @@ export default function AboutPage() {
         </section>
 
         {/* Compliance Commitment */}
-        <section className="py-20 bg-card">
+        <section className="py-12 sm:py-16 lg:py-20 bg-slate-800/30">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto text-center">
               <div className="flex justify-center mb-6">
-                <Award className="h-12 w-12 text-primary" />
+                <Award className="h-12 w-12 text-cyan-400" />
               </div>
-              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-6">
+              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-6 text-white">
                 Commitment to AU Malabo Convention
               </h2>
-              <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+              <p className="text-lg text-slate-300 leading-relaxed mb-8">
                 EastSecure is committed to supporting the African Union&apos;s Malabo Convention on Cyber Security 
                 and Personal Data Protection. We help organizations across East Africa achieve compliance with 
                 regional cybersecurity frameworks while maintaining the highest international standards.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div className="text-center space-y-2">
-                  <Shield className="h-8 w-8 text-primary mx-auto" />
-                  <h3 className="font-semibold">Data Protection</h3>
-                  <p className="text-sm text-muted-foreground">Kenya DPA compliance</p>
+                  <Shield className="h-8 w-8 text-cyan-400 mx-auto" />
+                  <h3 className="font-semibold text-white">Data Protection</h3>
+                  <p className="text-sm text-slate-400">Kenya DPA compliance</p>
                 </div>
                 <div className="text-center space-y-2">
-                  <Globe className="h-8 w-8 text-teal-500 mx-auto" />
-                  <h3 className="font-semibold">Regional Cooperation</h3>
-                  <p className="text-sm text-muted-foreground">Cross-border threat intelligence</p>
+                  <Globe className="h-8 w-8 text-blue-400 mx-auto" />
+                  <h3 className="font-semibold text-white">Regional Cooperation</h3>
+                  <p className="text-sm text-slate-400">Cross-border threat intelligence</p>
                 </div>
                 <div className="text-center space-y-2">
-                  <Award className="h-8 w-8 text-orange-500 mx-auto" />
-                  <h3 className="font-semibold">International Standards</h3>
-                  <p className="text-sm text-muted-foreground">ISO 27001 & NIST frameworks</p>
+                  <Award className="h-8 w-8 text-teal-400 mx-auto" />
+                  <h3 className="font-semibold text-white">International Standards</h3>
+                  <p className="text-sm text-slate-400">ISO 27001 & NIST frameworks</p>
                 </div>
               </div>
             </div>
@@ -220,14 +220,14 @@ export default function AboutPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-primary/5">
+        <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border-t border-slate-700">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl font-bold mb-4">Partner with EastSecure Today</h2>
-            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+            <h2 className="text-3xl font-bold mb-4 text-white">Partner with EastSecure Today</h2>
+            <p className="text-lg text-slate-300 mb-8 max-w-2xl mx-auto">
               Join hundreds of East African organizations that trust us with their cybersecurity needs.
             </p>
             <Link href="/contact">
-              <Button size="lg">
+              <Button size="lg" className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white shadow-lg hover:shadow-cyan-500/25">
                 Start Your Security Journey
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
