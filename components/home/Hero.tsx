@@ -35,7 +35,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="pt-24 pb-16 relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800">
+    <section className="pt-24 pb-16 relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-[hsl(var(--hero-gradient-from))] via-[hsl(var(--hero-gradient-via))] to-[hsl(var(--hero-gradient-to))]">
       {/* Background Pattern */}
       <div
         aria-hidden="true"

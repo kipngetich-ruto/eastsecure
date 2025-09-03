@@ -89,11 +89,11 @@ export default function Services() {
   };
 
   return (
-    <section className="py-16 sm:py-20 lg:py-24 bg-muted/30 relative overflow-hidden">
+    <section className="py-16 sm:py-20 lg:py-24 bg-muted/50 relative overflow-hidden">
       {/* Background elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-950/20 to-teal-950/20" />
-      <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl" />
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-blue-500/5" />
+      <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl" />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div

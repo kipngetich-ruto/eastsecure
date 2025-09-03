@@ -81,7 +81,7 @@ export default function ThreatStats() {
   }, [inView]);
 
   return (
-    <section className="py-16 sm:py-20 lg:py-24 bg-slate-900/50">
+    <section className="py-16 sm:py-20 lg:py-24 bg-[hsl(var(--section-bg))]/50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}
