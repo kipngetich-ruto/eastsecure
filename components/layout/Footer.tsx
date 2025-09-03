@@ -38,9 +38,9 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-card/50 backdrop-blur-sm border-t border-border/50 relative overflow-hidden">
+    <footer className="bg-background/95 backdrop-blur-sm border-t border-border/50 relative overflow-hidden">
       {/* Background elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-950/10 to-teal-950/10" />
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-blue-500/5" />
       <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 relative z-10">
