@@ -9,12 +9,11 @@ import {
   Users, 
   AlertCircle, 
   Cloud, 
-  Fingerprint,
   GraduationCap,
   ArrowRight,
   CheckCircle
 } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import Link from 'next/link';
 
@@ -76,7 +75,7 @@ export default function Services() {
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
