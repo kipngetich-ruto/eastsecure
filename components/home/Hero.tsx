@@ -81,13 +81,13 @@ export default function Hero() {
                 transition={{ duration: 0.8, delay: 0.3 }}
                 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6"
               >
-                <span className="dark:text-white text-slate-800/80">Safeguarding</span>
+                <span className="dark:text-white text-slate-700">Safeguarding</span>
                 <br />
                 <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
                   East Africa&apos;s
                 </span>
                 <br />
-                <span className="dark:text-white text-slate-800/80">Digital Space</span>
+                <span className="dark:text-white text-slate-700">Digital Space</span>
               </motion.h1>
 
               {/* Subtitle */}
@@ -140,7 +140,7 @@ export default function Hero() {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="cursor-pointer group border border-slate-600 hover:border-slate-700 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:bg-slate-800/50 flex items-center justify-center gap-2"
+                  className="cursor-pointer group bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:bg-slate-800/50 flex items-center justify-center gap-2"
                 >
                   <Play className="w-5 h-5" />
                   Watch Demo
@@ -152,7 +152,7 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={isVisible ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.8 }}
-                className="mt-12 pt-8 border-t border-slate-700"
+                className="mt-12 pt-8 border-t border-slate-300 dark:border-slate-700"
               >
                 <p className="text-slate-600 dark:text-slate-400 text-sm mb-4 text-center lg:text-left">
                   Trusted by leading organizations across East Africa
@@ -225,13 +225,15 @@ export default function Hero() {
                 transition={{ duration: 0.6, delay: 0.9 }}
                 className="grid grid-cols-2 gap-4 mt-8"
               >
-                <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-xl p-4 text-center">
-                  <div className="text-2xl font-bold text-cyan-400">500+</div>
-                  <div className="text-sm text-slate-400">Clients Protected</div>
+                <div className="
+                bg-slate-300  backdrop-blur-sm border border-slate-400/50 rounded-xl p-4 text-center
+                dark:bg-slate-800/50 dark:border-slate-700 ">
+                  <div className="text-2xl font-bold text-cyan-500 dark:text-cyan-400">500+</div>
+                  <div className="text-sm text-slate-700 dark:text-slate-400">Clients Protected</div>
                 </div>
-                <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-xl p-4 text-center">
-                  <div className="text-2xl font-bold text-green-400">99.9%</div>
-                  <div className="text-sm text-slate-400">Uptime SLA</div>
+                <div className="bg-slate-300 dark:bg-slate-800/50 backdrop-blur-sm border border-slate-400/50 dark:border-slate-700 rounded-xl p-4 text-center">
+                  <div className="text-2xl font-bold text-green-500">99.9%</div>
+                  <div className="text-sm text-slate-700 dark:text-slate-400">Uptime SLA</div>
                 </div>
               </motion.div>
             </motion.div>

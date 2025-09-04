@@ -12,9 +12,9 @@ const stats = [
     label: 'Cyber Attacks in Kenya',
     period: 'Quarterly',
     trend: '+15%',
-    color: 'text-red-400',
-    bgColor: 'bg-red-500/10',
-    borderColor: 'border-red-500/20'
+    color: 'text-red-600 bg:text-red-400',
+    bgColor: 'bg-red-500/40 dark:bg-red-500/10',
+    borderColor: 'border-red-500/50 bg:border-red-500/20'
   },
   {
     icon: Shield,
@@ -22,9 +22,9 @@ const stats = [
     label: 'Attacks Prevented',
     period: 'Success Rate',
     trend: '+5%',
-    color: 'text-green-400',
-    bgColor: 'bg-green-500/10',
-    borderColor: 'border-green-500/20'
+    color: 'text-green-600 dark:text-green-400',
+    bgColor: 'bg-green-500/40 dark:bg-green-500/10',
+    borderColor: 'border-green-500/50 dark:border-green-500/20'
   },
   {
     icon: TrendingUp,
@@ -32,9 +32,9 @@ const stats = [
     label: 'Regional Cyber Losses',
     period: 'Annual',
     trend: '+23%',
-    color: 'text-orange-400',
-    bgColor: 'bg-orange-500/10',
-    borderColor: 'border-orange-500/20'
+    color: ' text-orange-600 dark:text-orange-400',
+    bgColor: 'bg-orange-500/40 dark:bg-orange-500/10',
+    borderColor: 'border-orange-500/50 dark:border-orange-500/20'
   },
   {
     icon: Users,
@@ -42,9 +42,9 @@ const stats = [
     label: 'Organizations Protected',
     period: 'Across East Africa',
     trend: '+12%',
-    color: 'text-cyan-400',
-    bgColor: 'bg-cyan-500/10',
-    borderColor: 'border-cyan-500/20'
+    color: 'text-cyan-600 dark:text-cyan-400',
+    bgColor: 'bg-cyan-500/50 dark:bg-cyan-500/10',
+    borderColor: 'border-cyan-500/50 dark:border-cyan-500/20'
   }
 ];
 
@@ -90,10 +90,10 @@ export default function ThreatStats() {
           transition={{ duration: 0.8 }}
           className="text-center mb-12 lg:mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-slate-700 dark:text-white">
             East Africa&apos;s Cyber Threat Landscape
           </h2>
-          <p className="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
             Real-time insights into the cybersecurity challenges facing our region, 
             and how EastSecure is making a difference.
           </p>
@@ -128,7 +128,7 @@ export default function ThreatStats() {
 
                   {/* Value */}
                   <div className="mb-2">
-                    <div className="text-3xl sm:text-4xl font-bold text-white">
+                    <div className="text-3xl sm:text-4xl font-bold text-slate-700 dark:text-white">
                       {inView ? (
                         stat.value.includes('M') ? `${counters[index]}M+` :
                         stat.value.includes('B') ? `$${(counters[index] / 1000).toFixed(1)}B` :
@@ -139,10 +139,10 @@ export default function ThreatStats() {
                   </div>
 
                   {/* Label */}
-                  <div className="text-slate-300 font-medium mb-1">
+                  <div className="text-slate-700 dark:text-slate-300 font-medium mb-1">
                     {stat.label}
                   </div>
-                  <div className="text-slate-400 text-sm">
+                  <div className="text-slate-600 dark:text-slate-400 text-sm">
                     {stat.period}
                   </div>
                 </div>
@@ -158,26 +158,26 @@ export default function ThreatStats() {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="mt-12 lg:mt-16 text-center"
         >
-          <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-2xl p-6 sm:p-8 max-w-4xl mx-auto">
-            <h3 className="text-xl sm:text-2xl font-bold text-white mb-4">
+          <div className="bg-slate-300 dark:bg-slate-800/30 backdrop-blur-sm border border-slate-400/50 dark:border-slate-700 rounded-2xl p-6 sm:p-8 max-w-4xl mx-auto">
+            <h3 className="text-xl sm:text-2xl font-bold text-slate-700 dark:text-white mb-4">
               Why East Africa Needs Specialized Cybersecurity
             </h3>
             <div className="grid sm:grid-cols-3 gap-6 text-left">
               <div>
-                <h4 className="font-semibold text-cyan-400 mb-2">Mobile Money Threats</h4>
-                <p className="text-slate-300 text-sm">
+                <h4 className="font-semibold text-cyan-500 dark:text-cyan-400 mb-2">Mobile Money Threats</h4>
+                <p className="text-slate-700 dark:text-slate-300 text-sm">
                   M-Pesa and mobile banking platforms face unique security challenges requiring specialized protection.
                 </p>
               </div>
               <div>
-                <h4 className="font-semibold text-cyan-400 mb-2">Regulatory Compliance</h4>
-                <p className="text-slate-300 text-sm">
+                <h4 className="font-semibold text-cyan-500 dark:text-cyan-400 mb-2">Regulatory Compliance</h4>
+                <p className="text-slate-700 dark:text-slate-300 text-sm">
                   Navigate Kenya&apos;s Data Protection Act and AU cybersecurity frameworks with expert guidance.
                 </p>
               </div>
               <div>
-                <h4 className="font-semibold text-cyan-400 mb-2">Regional Expertise</h4>
-                <p className="text-slate-300 text-sm">
+                <h4 className="font-semibold text-cyan-500 dark:text-cyan-400 mb-2">Regional Expertise</h4>
+                <p className="text-slate-700 dark:text-slate-300 text-sm">
                   Deep understanding of local threat actors, attack patterns, and business environments.
                 </p>
               </div>
