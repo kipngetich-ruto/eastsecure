@@ -168,11 +168,11 @@ const services = [
 
 export default function ServicesPage() {
   return (
-    <div className="min-h-screen bg-slate-900">
+    <div className="min-h-screen bg-background">
       <Header />
       <main>
         {/* Hero Section */}
-        <section className="pt-24 pb-12 sm:pt-32 sm:pb-16 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800">
+        <section className="pt-24 pb-12 sm:pt-32 sm:pb-16 bg-gradient-to-br from-background via-primary/20 to-background">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-4xl mx-auto">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
@@ -181,7 +181,7 @@ export default function ServicesPage() {
                   East Africa
                 </span>
               </h1>
-              <p className="text-lg sm:text-xl text-slate-300 leading-relaxed">
+              <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
                 Comprehensive security solutions designed specifically for the unique challenges and opportunities 
                 of Kenya, Uganda, Tanzania, Rwanda, and Ethiopia's digital ecosystems.
               </p>
@@ -227,23 +227,23 @@ export default function ServicesPage() {
                     </div>
 
                     <div className="flex-1">
-                      <Card className="bg-slate-800/50 border border-slate-700">
+                      <Card className="bg-card/50 border border-border">
                         <CardHeader>
-                          <CardTitle className="flex items-center space-x-2 text-white">
+                          <CardTitle className="flex items-center space-x-2">
                             <Badge variant="secondary" className="bg-cyan-500/20 text-cyan-400">Case Study</Badge>
                           </CardTitle>
                         </CardHeader>
                         <CardContent className="space-y-4">
                           <div>
-                            <h4 className="font-semibold mb-2 text-white">Client: {service.caseStudy.client}</h4>
-                            <p className="text-sm text-slate-400">{service.caseStudy.challenge}</p>
+                            <h4 className="font-semibold mb-2">Client: {service.caseStudy.client}</h4>
+                            <p className="text-sm text-muted-foreground">{service.caseStudy.challenge}</p>
                           </div>
                           <div>
-                            <h4 className="font-semibold mb-2 text-white">Solution:</h4>
-                            <p className="text-sm text-slate-400">{service.caseStudy.solution}</p>
+                            <h4 className="font-semibold mb-2">Solution:</h4>
+                            <p className="text-sm text-muted-foreground">{service.caseStudy.solution}</p>
                           </div>
                           <div>
-                            <h4 className="font-semibold mb-2 text-white">Result:</h4>
+                            <h4 className="font-semibold mb-2">Result:</h4>
                             <p className="text-sm text-green-600">{service.caseStudy.result}</p>
                           </div>
                         </CardContent>
@@ -257,21 +257,21 @@ export default function ServicesPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border-t border-slate-700">
+        <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border-t border-border">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl font-bold mb-4 text-white">Ready to Secure Your Organization?</h2>
-            <p className="text-lg text-slate-300 mb-8 max-w-2xl mx-auto">
+            <h2 className="text-3xl font-bold mb-4">Ready to Secure Your Organization?</h2>
+            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
               Get started with a free cybersecurity consultation tailored to your specific needs and regional requirements.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link href="/contact">
-                <Button size="lg" className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white shadow-lg hover:shadow-cyan-500/25">
+                <Button size="lg" className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 shadow-lg hover:shadow-cyan-500/25">
                   Schedule Free Consultation
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
               <Link href="/portal">
-                <Button variant="outline" size="lg" className="border-slate-600 text-slate-300 hover:bg-slate-800 hover:text-white">
+                <Button variant="outline" size="lg">
                   Access Client Portal
                 </Button>
               </Link>

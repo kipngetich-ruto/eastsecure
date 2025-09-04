@@ -76,27 +76,27 @@ const categories = ['All', 'Mobile Security', 'Compliance', 'Threat Intelligence
 
 export default function BlogPage() {
   return (
-    <div className="min-h-screen bg-slate-900">
+    <div className="min-h-screen bg-background">
       <Header />
       {/* Hero Section */}
-      <section className="pt-24 pb-12 sm:pt-32 sm:pb-16 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800">
+      <section className="pt-24 pb-12 sm:pt-32 sm:pb-16 bg-gradient-to-br from-background via-primary/20 to-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
               Cybersecurity <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Insights</span>
             </h1>
-            <p className="text-lg sm:text-xl text-slate-300 mb-8">
+            <p className="text-lg sm:text-xl text-muted-foreground mb-8">
               Stay ahead of emerging threats with expert analysis, regional intelligence, 
               and actionable security guidance for East African organizations.
             </p>
             
             {/* Search Bar */}
             <div className="relative max-w-2xl mx-auto">
-              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-slate-400 w-5 h-5" />
+              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-muted-foreground w-5 h-5" />
               <input
                 type="text"
                 placeholder="Search articles, threats, or topics..."
-                className="w-full pl-12 pr-4 py-4 bg-slate-800/50 border border-slate-700 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all duration-300"
+                className="w-full pl-12 pr-4 py-4 bg-card/50 border border-border rounded-xl placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all duration-300"
               />
             </div>
           </div>
@@ -104,12 +104,12 @@ export default function BlogPage() {
       </section>
 
       {/* Filters */}
-      <section className="py-8 bg-slate-800/30 border-b border-slate-700">
+      <section className="py-8 bg-muted/30 border-b border-border">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap items-center justify-between gap-4">
             <div className="flex items-center gap-2">
-              <Filter className="w-5 h-5 text-slate-400" />
-              <span className="text-slate-300 font-medium">Filter by category:</span>
+              <Filter className="w-5 h-5 text-muted-foreground" />
+              <span className="text-foreground font-medium">Filter by category:</span>
             </div>
             <div className="flex flex-wrap gap-2">
               {categories.map((category) => (
@@ -117,8 +117,8 @@ export default function BlogPage() {
                   key={category}
                   className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
                     category === 'All'
-                      ? 'bg-cyan-500 text-white shadow-lg shadow-cyan-500/25'
-                      : 'bg-slate-700 text-slate-300 hover:bg-slate-600 hover:text-white'
+                      ? 'bg-cyan-500 text-primary-foreground shadow-lg shadow-cyan-500/25'
+                      : 'bg-muted text-muted-foreground hover:bg-muted/80 hover:text-foreground'
                   }`}
                 >
                   {category}
@@ -136,23 +136,23 @@ export default function BlogPage() {
           {blogPosts.filter(post => post.featured).map((post) => (
             <div key={post.id} className="mb-16">
               <div className="bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-500/20 rounded-2xl p-1 mb-4">
-                <div className="bg-slate-800 rounded-xl overflow-hidden">
+                <div className="bg-card rounded-xl overflow-hidden">
                   <div className="grid lg:grid-cols-2 gap-8 p-8">
                     <div className="order-2 lg:order-1">
                       <div className="flex items-center gap-4 mb-4">
-                        <span className="bg-cyan-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                        <span className="bg-cyan-500 text-primary-foreground px-3 py-1 rounded-full text-sm font-medium">
                           Featured
                         </span>
                         <span className="text-cyan-400 text-sm">{post.category}</span>
                       </div>
-                      <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4">
+                      <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">
                         {post.title}
                       </h2>
-                      <p className="text-slate-300 text-lg mb-6">
+                      <p className="text-muted-foreground text-lg mb-6">
                         {post.excerpt}
                       </p>
                       <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-4 text-sm text-slate-400">
+                        <div className="flex items-center gap-4 text-sm text-muted-foreground">
                           <div className="flex items-center gap-2">
                             <User className="w-4 h-4" />
                             {post.author}
@@ -189,7 +189,7 @@ export default function BlogPage() {
             {blogPosts.filter(post => !post.featured).map((post) => (
               <article
                 key={post.id}
-                className="group bg-slate-800/50 border border-slate-700 rounded-xl overflow-hidden hover:border-slate-600 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-500/10"
+                className="group bg-card/50 border border-border rounded-xl overflow-hidden hover:border-border/80 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-500/10"
               >
                 <div className="relative overflow-hidden">
                   <Image
@@ -200,21 +200,21 @@ export default function BlogPage() {
                     className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute top-4 left-4">
-                    <span className="bg-slate-900/80 backdrop-blur-sm text-cyan-400 px-3 py-1 rounded-full text-sm font-medium">
+                    <span className="bg-background/80 backdrop-blur-sm text-cyan-400 px-3 py-1 rounded-full text-sm font-medium">
                       {post.category}
                     </span>
                   </div>
                 </div>
                 
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">
+                  <h3 className="text-xl font-bold mb-3 group-hover:text-cyan-400 transition-colors">
                     {post.title}
                   </h3>
-                  <p className="text-slate-300 mb-4 line-clamp-3">
+                  <p className="text-muted-foreground mb-4 line-clamp-3">
                     {post.excerpt}
                   </p>
                   
-                  <div className="flex items-center justify-between text-sm text-slate-400">
+                  <div className="flex items-center justify-between text-sm text-muted-foreground">
                     <div className="flex items-center gap-4">
                       <div className="flex items-center gap-2">
                         <User className="w-4 h-4" />
@@ -239,7 +239,7 @@ export default function BlogPage() {
 
           {/* Load More */}
           <div className="text-center mt-12">
-            <button className="bg-slate-800 hover:bg-slate-700 border border-slate-600 hover:border-slate-500 text-white px-8 py-3 rounded-xl font-medium transition-all duration-300">
+            <button className="bg-card hover:bg-card/80 border border-border hover:border-border/80 px-8 py-3 rounded-xl font-medium transition-all duration-300">
               Load More Articles
             </button>
           </div>
@@ -247,22 +247,22 @@ export default function BlogPage() {
       </section>
 
       {/* Newsletter Signup */}
-      <section className="py-16 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border-t border-slate-700">
+      <section className="py-16 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border-t border-border">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-white mb-4">
+            <h2 className="text-3xl font-bold mb-4">
               Stay Informed on East African Cyber Threats
             </h2>
-            <p className="text-slate-300 mb-8">
+            <p className="text-muted-foreground mb-8">
               Get weekly insights, threat alerts, and security updates delivered to your inbox.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <input
                 type="email"
                 placeholder="Enter your email address"
-                className="flex-1 px-4 py-3 bg-slate-800 border border-slate-700 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
+                className="flex-1 px-4 py-3 bg-card border border-border rounded-xl placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
               />
-              <button className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white px-8 py-3 rounded-xl font-medium transition-all duration-300 shadow-lg hover:shadow-cyan-500/25">
+              <button className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-primary-foreground px-8 py-3 rounded-xl font-medium transition-all duration-300 shadow-lg hover:shadow-cyan-500/25">
                 Subscribe
               </button>
             </div>

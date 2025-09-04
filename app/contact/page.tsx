@@ -60,16 +60,16 @@ const offices = [
 
 export default function ContactPage() {
   return (
-    <div className="min-h-screen bg-slate-900">
+    <div className="min-h-screen bg-background">
     <Header />
       {/* Hero Section */}
-      <section className="pt-24 pb-12 sm:pt-32 sm:pb-16 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800">
+      <section className="pt-24 pb-12 sm:pt-32 sm:pb-16 bg-gradient-to-br from-background via-primary/20 to-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
               Get in <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Touch</span>
             </h1>
-            <p className="text-lg sm:text-xl text-slate-300 mb-8">
+            <p className="text-lg sm:text-xl text-muted-foreground mb-8">
               Ready to secure your organization? Our cybersecurity experts are here to help 
               with free consultations and tailored security solutions.
             </p>
@@ -82,12 +82,12 @@ export default function ContactPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
             {/* Contact Form */}
-            <div className="bg-slate-800/50 border border-slate-700 rounded-2xl p-6 sm:p-8">
+            <div className="bg-card/50 border border-border rounded-2xl p-6 sm:p-8">
               <div className="mb-8">
-                <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
+                <h2 className="text-2xl sm:text-3xl font-bold mb-4">
                   Send us a Message
                 </h2>
-                <p className="text-slate-300">
+                <p className="text-muted-foreground">
                   Fill out the form below and we&apos;ll get back to you within 24 hours.
                 </p>
               </div>
@@ -95,24 +95,24 @@ export default function ContactPage() {
               <form className="space-y-6">
                 <div className="grid sm:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm font-medium text-slate-300 mb-2">
+                    <label className="block text-sm font-medium mb-2">
                       First Name *
                     </label>
                     <input
                       type="text"
                       required
-                      className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all duration-300"
+                      className="w-full px-4 py-3 bg-input border border-border rounded-xl placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all duration-300"
                       placeholder="John"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-slate-300 mb-2">
+                    <label className="block text-sm font-medium mb-2">
                       Last Name *
                     </label>
                     <input
                       type="text"
                       required
-                      className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all duration-300"
+                      className="w-full px-4 py-3 bg-input border border-border rounded-xl placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all duration-300"
                       placeholder="Doe"
                     />
                   </div>
@@ -120,44 +120,44 @@ export default function ContactPage() {
 
                 <div className="grid sm:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm font-medium text-slate-300 mb-2">
+                    <label className="block text-sm font-medium mb-2">
                       Email Address *
                     </label>
                     <input
                       type="email"
                       required
-                      className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all duration-300"
+                      className="w-full px-4 py-3 bg-input border border-border rounded-xl placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all duration-300"
                       placeholder="john@company.com"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-slate-300 mb-2">
+                    <label className="block text-sm font-medium mb-2">
                       Phone Number
                     </label>
                     <input
                       type="tel"
-                      className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all duration-300"
+                      className="w-full px-4 py-3 bg-input border border-border rounded-xl placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all duration-300"
                       placeholder="+254 700 123 456"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-slate-300 mb-2">
+                  <label className="block text-sm font-medium mb-2">
                     Company
                   </label>
                   <input
                     type="text"
-                    className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all duration-300"
+                    className="w-full px-4 py-3 bg-input border border-border rounded-xl placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all duration-300"
                     placeholder="Your Company Name"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-slate-300 mb-2">
+                  <label className="block text-sm font-medium mb-2">
                     Service Interest
                   </label>
-                  <select className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all duration-300">
+                  <select className="w-full px-4 py-3 bg-input border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all duration-300">
                     <option value="">Select a service</option>
                     <option value="penetration-testing">Penetration Testing</option>
                     <option value="risk-assessment">Risk Assessment</option>
@@ -170,20 +170,20 @@ export default function ContactPage() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-slate-300 mb-2">
+                  <label className="block text-sm font-medium mb-2">
                     Message *
                   </label>
                   <textarea
                     required
                     rows={6}
-                    className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all duration-300 resize-none"
+                    className="w-full px-4 py-3 bg-input border border-border rounded-xl placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all duration-300 resize-none"
                     placeholder="Tell us about your cybersecurity needs and challenges..."
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-cyan-500/25 flex items-center justify-center gap-2 group"
+                  className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-primary-foreground px-8 py-4 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-cyan-500/25 flex items-center justify-center gap-2 group"
                 >
                   <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   Send Message
@@ -200,16 +200,16 @@ export default function ContactPage() {
                   return (
                     <div
                       key={index}
-                      className="bg-slate-800/50 border border-slate-700 rounded-xl p-6 hover:border-slate-600 transition-all duration-300"
+                      className="bg-card/50 border border-border rounded-xl p-6 hover:border-border/80 transition-all duration-300"
                     >
                       <div className="flex items-start gap-4">
-                        <div className={`p-3 bg-slate-700 rounded-xl ${info.color}`}>
+                        <div className={`p-3 bg-muted rounded-xl ${info.color}`}>
                           <Icon className="w-6 h-6" />
                         </div>
                         <div>
-                          <h3 className="font-semibold text-white mb-2">{info.title}</h3>
+                          <h3 className="font-semibold mb-2">{info.title}</h3>
                           {info.details.map((detail, idx) => (
-                            <p key={idx} className="text-slate-300 text-sm">
+                            <p key={idx} className="text-muted-foreground text-sm">
                               {detail}
                             </p>
                           ))}
@@ -221,30 +221,30 @@ export default function ContactPage() {
               </div>
 
               {/* Regional Offices */}
-              <div className="bg-slate-800/50 border border-slate-700 rounded-xl p-6">
-                <h3 className="text-xl font-bold text-white mb-6">Regional Offices</h3>
+              <div className="bg-card/50 border border-border rounded-xl p-6">
+                <h3 className="text-xl font-bold mb-6">Regional Offices</h3>
                 <div className="space-y-4">
                   {offices.map((office, index) => (
                     <div
                       key={index}
                       className={`p-4 rounded-xl border transition-all duration-300 ${
                         office.primary
-                          ? 'bg-cyan-500/10 border-cyan-500/30'
-                          : 'bg-slate-700/50 border-slate-600'
+                          ? 'bg-cyan-500/10 border-cyan-500/30' 
+                          : 'bg-muted/50 border-border'
                       }`}
                     >
                       <div className="flex items-center justify-between mb-2">
-                        <h4 className="font-semibold text-white">
+                        <h4 className="font-semibold">
                           {office.city}, {office.country}
                         </h4>
                         {office.primary && (
-                          <span className="bg-cyan-500 text-white px-2 py-1 rounded-full text-xs font-medium">
+                          <span className="bg-cyan-500 text-primary-foreground px-2 py-1 rounded-full text-xs font-medium">
                             HQ
                           </span>
                         )}
                       </div>
-                      <p className="text-slate-300 text-sm mb-1">{office.address}</p>
-                      <p className="text-slate-400 text-sm">{office.phone}</p>
+                      <p className="text-muted-foreground text-sm mb-1">{office.address}</p>
+                      <p className="text-muted-foreground text-sm">{office.phone}</p>
                     </div>
                   ))}
                 </div>
@@ -254,12 +254,12 @@ export default function ContactPage() {
               <div className="bg-gradient-to-r from-red-500/10 to-orange-500/10 border border-red-500/30 rounded-xl p-6">
                 <div className="flex items-center gap-3 mb-4">
                   <MessageSquare className="w-6 h-6 text-red-400" />
-                  <h3 className="text-xl font-bold text-white">Emergency Response</h3>
+                  <h3 className="text-xl font-bold">Emergency Response</h3>
                 </div>
-                <p className="text-slate-300 mb-4">
+                <p className="text-muted-foreground mb-4">
                   Experiencing a security incident? Our emergency response team is available 24/7.
                 </p>
-                <button className="bg-red-600 hover:bg-red-500 text-white px-6 py-3 rounded-xl font-medium transition-all duration-300 flex items-center gap-2">
+                <button className="bg-red-600 hover:bg-red-500 text-primary-foreground px-6 py-3 rounded-xl font-medium transition-all duration-300 flex items-center gap-2">
                   <Phone className="w-5 h-5" />
                   Call Emergency Line
                 </button>
@@ -270,21 +270,21 @@ export default function ContactPage() {
       </section>
 
       {/* Map Section */}
-      <section className="py-12 sm:py-16 bg-slate-800/30">
+      <section className="py-12 sm:py-16 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold text-white mb-4">Find Us</h2>
-            <p className="text-slate-300">
+            <h2 className="text-3xl font-bold mb-4">Find Us</h2>
+            <p className="text-muted-foreground">
               Visit our Nairobi headquarters or connect with our regional offices across East Africa.
             </p>
           </div>
           
           {/* Map Placeholder */}
-          <div className="bg-slate-700 border border-slate-600 rounded-2xl h-96 flex items-center justify-center">
+          <div className="bg-muted border border-border rounded-2xl h-96 flex items-center justify-center">
             <div className="text-center">
-              <MapPin className="w-12 h-12 text-slate-400 mx-auto mb-4" />
-              <p className="text-slate-400">Interactive map integration</p>
-              <p className="text-slate-500 text-sm">Google Maps API integration point</p>
+              <MapPin className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
+              <p className="text-muted-foreground">Interactive map integration</p>
+              <p className="text-muted-foreground/70 text-sm">Google Maps API integration point</p>
             </div>
           </div>
         </div>
