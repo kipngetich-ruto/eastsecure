@@ -6,32 +6,21 @@ import { Shield, ArrowRight, Play, CheckCircle } from 'lucide-react';
 
 export default function Hero() {
   const [isVisible, setIsVisible] = useState(false);
-  const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
-  const [particles, setParticles] = useState<{ x: number; y: number; delay: number }[]>([]);
+  const [particles, setParticles] = useState<
+    { x: number; y: number; delay: number; duration: number }[]
+  >([]);
 
   useEffect(() => {
     setIsVisible(true);
 
-    // Set initial viewport dimensions
-    const updateDimensions = () => {
-      setDimensions({
-        width: window.innerWidth,
-        height: window.innerHeight,
-      });
-    };
-
-    updateDimensions();
-    window.addEventListener('resize', updateDimensions);
-
-    // Pre-generate random particle positions once per mount
+    // Pre-generate random particle positions & animation timings once
     const newParticles = Array.from({ length: 20 }, () => ({
       x: Math.random() * window.innerWidth,
       y: Math.random() * window.innerHeight,
       delay: Math.random() * 2,
+      duration: 3 + Math.random() * 2,
     }));
     setParticles(newParticles);
-
-    return () => window.removeEventListener('resize', updateDimensions);
   }, []);
 
   return (
@@ -54,7 +43,7 @@ export default function Hero() {
               scale: [0, 1, 0],
             }}
             transition={{
-              duration: 3 + Math.random() * 2,
+              duration: p.duration,
               repeat: Infinity,
               delay: p.delay,
             }}
@@ -77,10 +66,10 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={isVisible ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="inline-flex items-center gap-2 bg-cyan-500/10 border border-cyan-500/20 rounded-full px-4 py-2 mb-6"
+                className="inline-flex items-center gap-2 bg-cyan-400/10 dark:bg-cyan-500/10 border border-cyan-500/20 dark:border-cyan-500/20 rounded-full px-4 py-2 mb-4"
               >
-                <Shield className="w-4 h-4 text-cyan-400" />
-                <span className="text-sm font-medium text-cyan-300">
+                <Shield className="w-4 h-4 text-cyan-500 dark:text-cyan-400" />
+                <span className="text-sm font-medium text-cyan-500 dark:text-cyan-300">
                   East Africa&apos;s Leading Cybersecurity Experts
                 </span>
               </motion.div>
@@ -92,13 +81,13 @@ export default function Hero() {
                 transition={{ duration: 0.8, delay: 0.3 }}
                 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6"
               >
-                <span className="text-white">Safeguarding</span>
+                <span className="dark:text-white text-slate-800/80">Safeguarding</span>
                 <br />
                 <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
                   East Africa&apos;s
                 </span>
                 <br />
-                <span className="text-white">Digital Space</span>
+                <span className="dark:text-white text-slate-800/80">Digital Space</span>
               </motion.h1>
 
               {/* Subtitle */}
@@ -106,7 +95,7 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={isVisible ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.5 }}
-                className="text-lg sm:text-xl text-slate-300 mb-8 max-w-2xl mx-auto lg:mx-0"
+                className="text-lg sm:text-xl text-slate-600 dark:text-slate-300 mb-8 max-w-2xl mx-auto lg:mx-0"
               >
                 Protecting businesses across Kenya, Uganda, Tanzania, Rwanda, and Ethiopia 
                 with cutting-edge cybersecurity solutions tailored for the African market.
@@ -127,7 +116,7 @@ export default function Hero() {
                 ].map((item, index) => (
                   <div key={index} className="flex items-center gap-3">
                     <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
-                    <span className="text-slate-300 text-sm sm:text-base">{item}</span>
+                    <span className="text-slate-600 dark:text-slate-300 text-sm sm:text-base">{item}</span>
                   </div>
                 ))}
               </motion.div>
@@ -142,7 +131,7 @@ export default function Hero() {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="group bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-cyan-500/25 flex items-center justify-center gap-2"
+                  className="cursor-pointer group bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-cyan-500/25 flex items-center justify-center gap-2"
                 >
                   Get Free Security Assessment
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -151,7 +140,7 @@ export default function Hero() {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="group border border-slate-600 hover:border-slate-500 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:bg-slate-800/50 flex items-center justify-center gap-2"
+                  className="cursor-pointer group border border-slate-600 hover:border-slate-700 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:bg-slate-800/50 flex items-center justify-center gap-2"
                 >
                   <Play className="w-5 h-5" />
                   Watch Demo
@@ -165,12 +154,12 @@ export default function Hero() {
                 transition={{ duration: 0.6, delay: 0.8 }}
                 className="mt-12 pt-8 border-t border-slate-700"
               >
-                <p className="text-slate-400 text-sm mb-4 text-center lg:text-left">
+                <p className="text-slate-600 dark:text-slate-400 text-sm mb-4 text-center lg:text-left">
                   Trusted by leading organizations across East Africa
                 </p>
                 <div className="flex flex-wrap justify-center lg:justify-start gap-6 opacity-60">
                   {['KCB Bank', 'Safaricom', 'EABL', 'Equity Bank', 'NCBA'].map((company, index) => (
-                    <div key={index} className="text-slate-400 font-medium text-sm">
+                    <div key={index} className="text-slate-600 dark:text-slate-400 font-medium text-sm">
                       {company}
                     </div>
                   ))}
@@ -222,6 +211,7 @@ export default function Hero() {
                     animate={isVisible ? { opacity: 1, scale: 1 } : {}}
                     transition={{ duration: 0.5, delay: item.delay }}
                     className={`absolute ${item.position} w-12 h-12 bg-slate-800/80 backdrop-blur-sm rounded-full flex items-center justify-center border border-slate-600`}
+                    aria-hidden="true"
                   >
                     <span className="text-xl">{item.icon}</span>
                   </motion.div>
