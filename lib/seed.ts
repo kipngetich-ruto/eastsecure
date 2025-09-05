@@ -1,24 +1,21 @@
-import { PrismaClient } from '@prisma/client';
-import { hashPassword } from '../lib/auth';
-
-const prisma = new PrismaClient();
+import { db } from './db';
+import { users, posts } from './schema';
+import { hashPassword } from './auth';
 
 async function main() {
+  console.log('Seeding database...');
+
   // Create sample users
   const hashedPassword = await hashPassword('password123');
   
-  await prisma.user.upsert({
-    where: { email: 'john.doe@example.com' },
-    update: {},
-    create: {
-      name: 'John Doe',
-      email: 'john.doe@example.com',
-      password: hashedPassword,
-      company: 'Example Corp',
-      phone: '+254 700 123 456',
-      role: 'client'
-    }
-  });
+  await db.insert(users).values({
+    name: 'John Doe',
+    email: 'john.doe@example.com',
+    password: hashedPassword,
+    company: 'Example Corp',
+    phone: '+254 700 123 456',
+    role: 'client'
+  }).onConflictDoNothing();
 
   // Create sample blog posts
   const blogPosts = [
@@ -49,11 +46,7 @@ async function main() {
   ];
 
   for (const post of blogPosts) {
-    await prisma.post.upsert({
-      where: { slug: post.slug },
-      update: {},
-      create: post
-    });
+    await db.insert(posts).values(post).onConflictDoNothing();
   }
 
   console.log('Database seeded successfully');
@@ -63,7 +56,4 @@ main()
   .catch((e) => {
     console.error(e);
     process.exit(1);
-  })
-  .finally(async () => {
-    await prisma.$disconnect();
   });

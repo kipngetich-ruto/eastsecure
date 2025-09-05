@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { prisma } from '@/lib/prisma';
+import { db } from '@/lib/db';
+import { inquiries } from '@/lib/schema';
 
 export async function POST(request: NextRequest) {
   try {
@@ -15,17 +16,15 @@ export async function POST(request: NextRequest) {
     }
 
     // Save inquiry to database
-    const inquiry = await prisma.inquiry.create({
-      data: {
-        name,
-        email,
-        company: company || '',
-        phone: phone || '',
-        service,
-        message,
-        status: 'new'
-      }
-    });
+    const [inquiry] = await db.insert(inquiries).values({
+      name,
+      email,
+      company: company || '',
+      phone: phone || '',
+      service,
+      message,
+      status: 'new'
+    }).returning();
 
     // In a real app, you would send an email notification here
     // using Nodemailer or similar service

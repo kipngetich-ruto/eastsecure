@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { prisma } from '@/lib/prisma';
-// import { hashPassword, generateToken } from '@/lib/auth';
+import { db } from '@/lib/db';
+import { users } from '@/lib/schema';
+import { eq } from 'drizzle-orm';
+import { hashPassword, generateToken } from '@/lib/auth';
 
 export async function POST(request: NextRequest) {
   try {
@@ -15,9 +17,8 @@ export async function POST(request: NextRequest) {
     }
 
     // Check if user already exists
-    const existingUser = await prisma.user.findUnique({
-      where: { email }
-    });
+    const existingUserResult = await db.select().from(users).where(eq(users.email, email)).limit(1);
+    const existingUser = existingUserResult[0];
 
     if (existingUser) {
       return NextResponse.json(
@@ -27,30 +28,28 @@ export async function POST(request: NextRequest) {
     }
 
     // Hash password
-    // const hashedPassword = await hashPassword(password);
+    const hashedPassword = await hashPassword(password);
 
-    // // Create user
-    // const user = await prisma.user.create({
-    //   data: {
-    //     name,
-    //     email,
-    //     password: hashedPassword,
-    //     company: company || '',
-    //     phone: phone || '',
-    //     role: 'client'
-    //   }
-    // });
+    // Create user
+    const [user] = await db.insert(users).values({
+      name,
+      email,
+      password: hashedPassword,
+      company: company || '',
+      phone: phone || '',
+      role: 'client'
+    }).returning();
 
     // Generate JWT token
-    // const token = generateToken(user.id);
+    const token = generateToken(user.id);
 
-    // // Return user data and token (exclude password)
-    // const { password: _, ...userWithoutPassword } = user;
+    // Return user data and token (exclude password)
+    const { password: _, ...userWithoutPassword } = user;
     
-    // return NextResponse.json({
-    //   user: userWithoutPassword,
-    //   token
-    // }, { status: 201 });
+    return NextResponse.json({
+      user: userWithoutPassword,
+      token
+    }, { status: 201 });
   } catch (error) {
     console.error('Registration error:', error);
     return NextResponse.json(

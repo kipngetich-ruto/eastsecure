@@ -1,6 +1,8 @@
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
-import { prisma } from './prisma';
+import { db } from './db';
+import { users } from './schema';
+import { eq } from 'drizzle-orm';
 
 const JWT_SECRET = process.env.JWT_SECRET || 'your-secret-key';
 
@@ -30,8 +32,13 @@ export async function getCurrentUser(token?: string) {
   const decoded = verifyToken(token);
   if (!decoded) return null;
   
-  return prisma.user.findUnique({
-    where: { id: decoded.userId },
-    select: { id: true, name: true, email: true, role: true, company: true }
-  });
+  const user = await db.select({
+    id: users.id,
+    name: users.name,
+    email: users.email,
+    role: users.role,
+    company: users.company
+  }).from(users).where(eq(users.id, decoded.userId)).limit(1);
+  
+  return user[0] || null;
 }
