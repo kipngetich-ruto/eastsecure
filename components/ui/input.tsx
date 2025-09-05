@@ -1,12 +1,38 @@
+'use client';
+
 import * as React from 'react';
 
 import { cn } from '@/lib/utils';
 
+// Define valid HTML input types
+type InputType =
+  | 'text'
+  | 'password'
+  | 'email'
+  | 'number'
+  | 'tel'
+  | 'url'
+  | 'search'
+  | 'date'
+  | 'time'
+  | 'datetime-local'
+  | 'month'
+  | 'week'
+  | 'file'
+  | 'checkbox'
+  | 'radio'
+  | 'range'
+  | 'color'
+  | 'hidden';
+
 export interface InputProps
-  extends React.InputHTMLAttributes<HTMLInputElement> {}
+  extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'type'> {
+  type?: InputType; // Restrict type to valid HTML input types
+  'aria-label'?: string; // Encourage accessibility
+}
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ className, type, ...props }, ref) => {
+  ({ className, type = 'text', 'aria-label': ariaLabel, ...props }, ref) => {
     return (
       <input
         type={type}
@@ -15,6 +41,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
           className
         )}
         ref={ref}
+        aria-label={ariaLabel} // Pass aria-label for accessibility
         {...props}
       />
     );

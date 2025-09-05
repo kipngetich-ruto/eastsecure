@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
-import { verifyPassword, generateToken } from '@/lib/auth';
+import { verifyPassword } from '@/lib/auth';
 
 export async function POST(request: NextRequest) {
   try {
@@ -36,15 +36,15 @@ export async function POST(request: NextRequest) {
     }
 
     // Generate JWT token
-    const token = generateToken(user.id);
+    // const token = generateToken(user.id);
 
     // Return user data and token
-    const { password: _, ...userWithoutPassword } = user;
+    // const { password: _, ...userWithoutPassword } = user;
     
-    return NextResponse.json({
-      user: userWithoutPassword,
-      token
-    });
+    // return NextResponse.json({
+    //   user: userWithoutPassword,
+    //   token
+    // });
   } catch (error) {
     console.error('Login error:', error);
     return NextResponse.json(
