@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import { MapPin, Phone, Mail, Clock, Send, MessageSquare } from 'lucide-react';
+import { Phone, Mail, Clock, Send, MessageSquare, MessageCircle } from 'lucide-react';
 import Header from '@/components/layout/Header';
 
 export const metadata: Metadata = {
@@ -9,54 +9,54 @@ export const metadata: Metadata = {
 
 const contactInfo = [
   {
-    icon: MapPin,
-    title: 'Headquarters',
-    details: ['Westlands, Nairobi, Kenya', 'ABC Place, 5th Floor'],
-    color: 'text-cyan-400'
+    icon: MessageCircle,
+    title: 'WhatsApp',
+    details: ['+254 700 123 456', '+254 20 123 4567'],
+    color: 'text-green-700 dark:text-green-400'
   },
   {
     icon: Phone,
     title: 'Phone',
     details: ['+254 700 123 456', '+254 20 123 4567'],
-    color: 'text-green-400'
+    color: 'text-green-700 dark:text-green-400'
   },
   {
     icon: Mail,
     title: 'Email',
     details: ['info@eastsecure.co.ke', 'support@eastsecure.co.ke'],
-    color: 'text-blue-400'
+    color: 'text-blue-700 dark:text-blue-400'
   },
   {
     icon: Clock,
     title: 'Business Hours',
     details: ['Mon - Fri: 8:00 AM - 6:00 PM', 'Emergency: 24/7 Available'],
-    color: 'text-orange-400'
+    color: 'text-orange-700 dark:text-orange-400'
   }
 ];
 
-const offices = [
-  {
-    country: 'Kenya',
-    city: 'Nairobi',
-    address: 'Westlands, ABC Place, 5th Floor',
-    phone: '+254 700 123 456',
-    primary: true
-  },
-  {
-    country: 'Uganda',
-    city: 'Kampala',
-    address: 'Nakasero, IPS Building, 3rd Floor',
-    phone: '+256 700 123 456',
-    primary: false
-  },
-  {
-    country: 'Tanzania',
-    city: 'Dar es Salaam',
-    address: 'Masaki, Peninsula Hotel, 2nd Floor',
-    phone: '+255 700 123 456',
-    primary: false
-  }
-];
+// const offices = [
+//   {
+//     country: 'Kenya',
+//     city: 'Nairobi',
+//     address: 'Westlands, ABC Place, 5th Floor',
+//     phone: '+254 700 123 456',
+//     primary: true
+//   },
+//   {
+//     country: 'Uganda',
+//     city: 'Kampala',
+//     address: 'Nakasero, IPS Building, 3rd Floor',
+//     phone: '+256 700 123 456',
+//     primary: false
+//   },
+//   {
+//     country: 'Tanzania',
+//     city: 'Dar es Salaam',
+//     address: 'Masaki, Peninsula Hotel, 2nd Floor',
+//     phone: '+255 700 123 456',
+//     primary: false
+//   }
+// ];
 
 export default function ContactPage() {
   return (
@@ -221,7 +221,7 @@ export default function ContactPage() {
               </div>
 
               {/* Regional Offices */}
-              <div className="bg-card/50 border border-border rounded-xl p-6">
+              {/* <div className="bg-card/50 border border-border rounded-xl p-6">
                 <h3 className="text-xl font-bold mb-6">Regional Offices</h3>
                 <div className="space-y-4">
                   {offices.map((office, index) => (
@@ -248,7 +248,7 @@ export default function ContactPage() {
                     </div>
                   ))}
                 </div>
-              </div>
+              </div> */}
 
               {/* Emergency Contact */}
               <div className="bg-gradient-to-r from-red-500/10 to-orange-500/10 border border-red-500/30 rounded-xl p-6">
@@ -256,10 +256,10 @@ export default function ContactPage() {
                   <MessageSquare className="w-6 h-6 text-red-400" />
                   <h3 className="text-xl font-bold">Emergency Response</h3>
                 </div>
-                <p className="text-muted-foreground mb-4">
+                <p className="text-muted-foreground mb-4 dark:text-slate-300">
                   Experiencing a security incident? Our emergency response team is available 24/7.
                 </p>
-                <button className="bg-red-600 hover:bg-red-500 text-primary-foreground px-6 py-3 rounded-xl font-medium transition-all duration-300 flex items-center gap-2">
+                <button className="bg-red-600 hover:bg-red-500 text-primary-foreground px-6 py-3 rounded-xl font-medium transition-all duration-300 flex items-center gap-2 dark:text-white">
                   <Phone className="w-5 h-5" />
                   Call Emergency Line
                 </button>
@@ -270,7 +270,7 @@ export default function ContactPage() {
       </section>
 
       {/* Map Section */}
-      <section className="py-12 sm:py-16 bg-muted/30">
+      {/* <section className="py-12 sm:py-16 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8">
             <h2 className="text-3xl font-bold mb-4">Find Us</h2>
@@ -279,7 +279,6 @@ export default function ContactPage() {
             </p>
           </div>
           
-          {/* Map Placeholder */}
           <div className="bg-muted border border-border rounded-2xl h-96 flex items-center justify-center">
             <div className="text-center">
               <MapPin className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
@@ -288,7 +287,7 @@ export default function ContactPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 }

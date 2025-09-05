@@ -175,9 +175,9 @@ export default function ServicesPage() {
         <section className="pt-24 pb-12 sm:pt-32 sm:pb-16 bg-gradient-to-br from-background via-primary/20 to-background">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-4xl mx-auto">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-tight mb-6 text-slate-700 dark:text-white">
                 Cybersecurity Services for
-                <span className="block bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+                <span className="block bg-gradient-to-r from-cyan-500 to-blue-700 dark:from-cyan-400 dark:to-blue-400 bg-clip-text text-transparent">
                   East Africa
                 </span>
               </h1>
@@ -202,18 +202,18 @@ export default function ServicesPage() {
                         <div className="p-3 bg-cyan-500/10 rounded-lg">
                           <IconComponent className="h-8 w-8 text-cyan-400" />
                         </div>
-                        <h2 className="text-3xl font-bold text-white">{service.title}</h2>
+                        <h2 className="text-3xl font-bold text-slate-700 dark:text-white">{service.title}</h2>
                       </div>
                       
-                      <p className="text-lg text-slate-300 leading-relaxed">
+                      <p className="text-lg text-slate-700 dark:text-slate-300 leading-relaxed">
                         {service.fullDescription}
                       </p>
 
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         {service.features.map((feature, featureIndex) => (
                           <div key={featureIndex} className="flex items-center space-x-2">
-                            <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0" />
-                            <span className="text-sm text-slate-300">{feature}</span>
+                            <CheckCircle className="h-4 w-4 text-green-700 dark:text-green-500 flex-shrink-0" />
+                            <span className="text-sm text-slate-700 dark:text-slate-300">{feature}</span>
                           </div>
                         ))}
                       </div>

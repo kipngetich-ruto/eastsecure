@@ -270,7 +270,7 @@ export default function PortalPage() {
           <Tabs defaultValue="dashboard" className="space-y-6">
             <TabsList className="grid w-full grid-cols-4">
               <TabsTrigger value="dashboard">Dashboard</TabsTrigger>
-              <TabsTrigger value="requests">Service Requests</TabsTrigger>
+              <TabsTrigger value="requests">Requests</TabsTrigger>
               <TabsTrigger value="reports">Reports</TabsTrigger>
               <TabsTrigger value="profile">Profile</TabsTrigger>
             </TabsList>
@@ -490,7 +490,6 @@ export default function PortalPage() {
           </Tabs>
         </div>
       </main>
-      <Footer />
     </div>
   );
 }

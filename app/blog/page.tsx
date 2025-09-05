@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import { Search, Calendar, User, ArrowRight, Filter } from 'lucide-react';
 import Image from 'next/image';
 import Header from '@/components/layout/Header';
+import { Button } from '@/components/ui/button';
 
 export const metadata: Metadata = {
   title: 'Cybersecurity Blog | EastSecure Cyber Solutions',
@@ -189,7 +190,7 @@ export default function BlogPage() {
             {blogPosts.filter(post => !post.featured).map((post) => (
               <article
                 key={post.id}
-                className="group bg-card/50 border border-border rounded-xl overflow-hidden hover:border-border/80 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-500/10"
+                className="cursor-pointer group bg-card/50 border border-border rounded-xl overflow-hidden hover:border-border/80 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-500/10"
               >
                 <div className="relative overflow-hidden">
                   <Image
@@ -200,7 +201,7 @@ export default function BlogPage() {
                     className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute top-4 left-4">
-                    <span className="bg-background/80 backdrop-blur-sm text-cyan-400 px-3 py-1 rounded-full text-sm font-medium">
+                    <span className="bg-background/80 backdrop-blur-sm text-cyan-600 dark:text-cyan-400 px-3 py-1 rounded-full text-sm font-medium">
                       {post.category}
                     </span>
                   </div>
@@ -239,9 +240,13 @@ export default function BlogPage() {
 
           {/* Load More */}
           <div className="text-center mt-12">
-            <button className="bg-card hover:bg-card/80 border border-border hover:border-border/80 px-8 py-3 rounded-xl font-medium transition-all duration-300">
+            <Button 
+              size="lg"
+              className="group bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white shadow-lg hover:shadow-cyan-500/25"
+            >
               Load More Articles
-            </button>
+              <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+            </Button>
           </div>
         </div>
       </section>

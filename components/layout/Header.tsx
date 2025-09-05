@@ -7,7 +7,6 @@ import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Menu, Shield } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { ThemeToggle } from '@/components/ui/theme-toggle';
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -194,7 +193,6 @@ export default function Header() {
 
           {/* Desktop CTA Buttons */}
           <div className="hidden lg:flex items-center space-x-3">
-            <ThemeToggle />
             <Link href="/portal">
               <Button variant="ghost" size="sm" className="hover:bg-accent">
                 Client Portal
@@ -257,13 +255,9 @@ export default function Header() {
                   ))}
                 </nav>
 
-                <div className="space-y-3 pt-6 border-t border-border">
-                  <div className="flex items-center justify-between px-4">
-                    <span className="text-sm font-medium">Theme</span>
-                    <ThemeToggle />
-                  </div>
+                <div className="space-y-6 pt-3 border-t border-border">
                   <Link href="/portal" onClick={() => setIsMobileMenuOpen(false)}>
-                    <Button variant="outline" className="w-full justify-start">
+                    <Button variant="outline" className="w-full justify-start mb-2">
                       Client Portal
                     </Button>
                   </Link>

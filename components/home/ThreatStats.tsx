@@ -13,8 +13,8 @@ const stats = [
     period: 'Quarterly',
     trend: '+15%',
     color: 'text-red-600 bg:text-red-400',
-    bgColor: 'bg-red-500/40 dark:bg-red-500/10',
-    borderColor: 'border-red-500/50 bg:border-red-500/20'
+    bgColor: 'bg-red-500/30 dark:bg-red-500/10',
+    borderColor: 'border-red-500/40 bg:border-red-500/20'
   },
   {
     icon: Shield,
@@ -23,8 +23,8 @@ const stats = [
     period: 'Success Rate',
     trend: '+5%',
     color: 'text-green-600 dark:text-green-400',
-    bgColor: 'bg-green-500/40 dark:bg-green-500/10',
-    borderColor: 'border-green-500/50 dark:border-green-500/20'
+    bgColor: 'bg-green-500/30 dark:bg-green-500/10',
+    borderColor: 'border-green-500/40 dark:border-green-500/20'
   },
   {
     icon: TrendingUp,
@@ -33,8 +33,8 @@ const stats = [
     period: 'Annual',
     trend: '+23%',
     color: ' text-orange-600 dark:text-orange-400',
-    bgColor: 'bg-orange-500/40 dark:bg-orange-500/10',
-    borderColor: 'border-orange-500/50 dark:border-orange-500/20'
+    bgColor: 'bg-orange-500/30 dark:bg-orange-500/10',
+    borderColor: 'border-orange-500/40 dark:border-orange-500/20'
   },
   {
     icon: Users,
@@ -43,8 +43,8 @@ const stats = [
     period: 'Across East Africa',
     trend: '+12%',
     color: 'text-cyan-600 dark:text-cyan-400',
-    bgColor: 'bg-cyan-500/50 dark:bg-cyan-500/10',
-    borderColor: 'border-cyan-500/50 dark:border-cyan-500/20'
+    bgColor: 'bg-cyan-500/30 dark:bg-cyan-500/10',
+    borderColor: 'border-cyan-500/40 dark:border-cyan-500/20'
   }
 ];
 
@@ -158,7 +158,7 @@ export default function ThreatStats() {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="mt-12 lg:mt-16 text-center"
         >
-          <div className="bg-slate-300 dark:bg-slate-800/30 backdrop-blur-sm border border-slate-400/50 dark:border-slate-700 rounded-2xl p-6 sm:p-8 max-w-4xl mx-auto">
+          <div className="bg-slate-200 dark:bg-slate-800/30 backdrop-blur-sm border border-slate-400/50 dark:border-slate-700 rounded-2xl p-6 sm:p-8 max-w-4xl mx-auto">
             <h3 className="text-xl sm:text-2xl font-bold text-slate-700 dark:text-white mb-4">
               Why East Africa Needs Specialized Cybersecurity
             </h3>
