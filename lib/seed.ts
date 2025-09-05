@@ -6,15 +6,15 @@ async function main() {
   console.log('Seeding database...');
 
   // Create sample users
-  const hashedPassword = await hashPassword('password123');
+  const hashedPassword = await hashPassword('1234');
   
   await db.insert(users).values({
-    name: 'John Doe',
-    email: 'john.doe@example.com',
+    email: 'ruto365@gmail.com',
+    name: 'Kipngetich Ruto',
     password: hashedPassword,
-    company: 'Example Corp',
-    phone: '+254 700 123 456',
-    role: 'client'
+    role: 'client',
+    company: 'ImaraVault Ltd',
+    phone: '+254 716350600',
   }).onConflictDoNothing();
 
   // Create sample blog posts

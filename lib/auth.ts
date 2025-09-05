@@ -4,7 +4,7 @@ import { db } from './db';
 import { users } from './schema';
 import { eq } from 'drizzle-orm';
 
-const JWT_SECRET = process.env.JWT_SECRET || 'your-secret-key';
+const JWT_SECRET = process.env.JWT_SECRET!;
 
 export async function hashPassword(password: string) {
   return bcrypt.hash(password, 12);
