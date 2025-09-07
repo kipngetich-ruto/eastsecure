@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { db } from '@/lib/db';
 import { users } from '@/lib/schema';
 import { eq } from 'drizzle-orm';
-import { verifyPassword } from '@/lib/auth';
+import { verifyPassword, generateToken } from '@/lib/auth';
 
 export async function POST(request: NextRequest) {
   try {
@@ -37,15 +37,16 @@ export async function POST(request: NextRequest) {
     }
 
     // Generate JWT token
-    // const token = generateToken(user.id);
+    const token = generateToken(user.id);
 
-    // Return user data and token
-    // const { password: _, ...userWithoutPassword } = user;
+    // Return user data and token (exclude password)
+    const { password: _, ...userWithoutPassword } = user;
     
-    // return NextResponse.json({
-    //   user: userWithoutPassword,
-    //   token
-    // });
+    return NextResponse.json({
+      user: userWithoutPassword,
+      token,
+      message: 'Login successful'
+    });
   } catch (error) {
     console.error('Login error:', error);
     return NextResponse.json(
