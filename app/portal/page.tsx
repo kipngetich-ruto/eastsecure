@@ -84,39 +84,60 @@ export default function PortalPage() {
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      // Mock authentication - In a real app, this would call your API
-      if (loginForm.email && loginForm.password) {
-        localStorage.setItem('token', 'mock-token');
+      const response = await fetch('/api/auth/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(loginForm),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        localStorage.setItem('token', data.token);
+        localStorage.setItem('user', JSON.stringify(data.user));
         setIsAuthenticated(true);
-        toast.success('Login successful!');
+        toast.success(data.message || 'Login successful!');
       } else {
-        toast.error('Please fill in all fields');
+        toast.error(data.error || 'Login failed');
       }
     } catch (error) {
+      console.error('Login error:', error);
       toast.error('Login failed. Please try again.');
-      console.log(error)
     }
   };
 
   const handleRegister = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      // Mock registration - In a real app, this would call your API
-      if (registerForm.name && registerForm.email && registerForm.password) {
-        localStorage.setItem('token', 'mock-token');
+      const response = await fetch('/api/auth/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(registerForm),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        localStorage.setItem('token', data.token);
+        localStorage.setItem('user', JSON.stringify(data.user));
         setIsAuthenticated(true);
-        toast.success('Registration successful! Welcome to EastSecure.');
+        toast.success(data.message || 'Registration successful! Welcome to EastSecure.');
       } else {
-        toast.error('Please fill in all required fields');
+        toast.error(data.error || 'Registration failed');
       }
     } catch (error) {
+      console.error('Registration error:', error);
       toast.error('Registration failed. Please try again.');
-      console.log(error)
     }
   };
 
   const handleLogout = () => {
     localStorage.removeItem('token');
+    localStorage.removeItem('user');
     setIsAuthenticated(false);
     toast.success('Logged out successfully');
   };

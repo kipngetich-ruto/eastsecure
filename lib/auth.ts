@@ -32,7 +32,7 @@ export async function getCurrentUser(token?: string) {
   const decoded = verifyToken(token);
   if (!decoded) return null;
   
-  const user = await db.select({
+  const userResult = await db.select({
     id: users.id,
     name: users.name,
     email: users.email,
@@ -40,5 +40,5 @@ export async function getCurrentUser(token?: string) {
     company: users.company
   }).from(users).where(eq(users.id, decoded.userId)).limit(1);
   
-  return user[0] || null;
+  return userResult[0] || null;
 }

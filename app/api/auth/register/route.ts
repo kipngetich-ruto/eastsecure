@@ -7,7 +7,7 @@ import { hashPassword, generateToken } from '@/lib/auth';
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { name, email, password, } = body;
+    const { name, email, password, company, phone } = body;
 
     if (!name || !email || !password) {
       return NextResponse.json(
@@ -48,7 +48,8 @@ export async function POST(request: NextRequest) {
     
     return NextResponse.json({
       user: userWithoutPassword,
-      token
+      token,
+      message: 'Registration successful'
     }, { status: 201 });
   } catch (error) {
     console.error('Registration error:', error);
